@@ -1,0 +1,20 @@
+# .NET build artefacts
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+.idea/
+*.DotSettings.user
+
+# NuGet cache
+*.nupkg
+*.snupkg
+project.assets.json
+project.nuget.cache
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

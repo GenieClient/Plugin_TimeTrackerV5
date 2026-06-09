@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- Plugin_TimeTrackerV5 options. Mirrors the Genie 4 Time_Tracker.xml <Options>
+     block. Copy this file to {AppData}/Genie5/Time_Tracker.xml to override the
+     embedded defaults.
+
+     The <Calculations> offsets below are retained ONLY for format familiarity
+     with the Genie 4 file. This port reads moon/sun state from DR's own `obs sky`
+     and `perceive` output rather than computing it client-side, so the offsets
+     are not used. -->
+<Time_Tracker>
+  <Options>
+    <ShowElanthiaTime>True</ShowElanthiaTime>
+    <ShowLongNames>True</ShowLongNames>
+    <UseGameTime>True</UseGameTime>
+    <IncludeAnlasName>True</IncludeAnlasName>
+    <IncludeTimeOfDay>True</IncludeTimeOfDay>
+    <LogGameEvents>False</LogGameEvents>
+  </Options>
+  <Calculations>
+    <SunOffset>-18</SunOffset>
+    <KatambaOffset>1974614</KatambaOffset>
+    <XibarOffset>-79443</XibarOffset>
+    <YavashOffset>97756</YavashOffset>
+  </Calculations>
+</Time_Tracker>

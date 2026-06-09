@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Genie 5 Time Tracker plugin (Plugin_TimeTrackerV5 — port of the Genie 4
+       TimeTracker plugin). References only the Genie 5 plugin contract
+       (Genie.Plugins.Abstractions). Builds to a single Plugin_TimeTrackerV5.dll
+       that drops into {AppData}/Genie5/Plugins/ on Windows (or the platform
+       equivalent on macOS / Linux).
+
+       Unlike the Genie 4 original — which computed moon positions client-side
+       from epoch offsets in Time_Tracker.xml — this port is PARSE-FIRST: it
+       reads DR's own `time`, `weather`, `obs sky` and `perceive` output and
+       reflects it, then live-ticks the Elanthian time-of-day from the system
+       clock between readings. The XML's <Calculations> offsets are therefore
+       not used (kept in the shipped file only for format familiarity). -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Genie.Plugins.TimeTracker</RootNamespace>
+    <AssemblyName>Plugin_TimeTrackerV5</AssemblyName>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The plugin contract is checked in at lib/ so the project builds with no
+         NuGet feed configured. Private=false: the host already loads its own
+         copy at runtime, so we don't ship a duplicate alongside the plugin. -->
+    <Reference Include="Genie.Plugins.Abstractions">
+      <HintPath>lib\Genie.Plugins.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Shipped default options, also embedded so the plugin has sane defaults
+         even with no override file present. A user copy at
+         {AppData}/Genie5/Time_Tracker.xml takes precedence at load. -->
+    <EmbeddedResource Include="Time_Tracker.xml" />
+  </ItemGroup>
+
+</Project>
