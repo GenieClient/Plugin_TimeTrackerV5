@@ -19,7 +19,7 @@
     <LangVersion>latest</LangVersion>
     <RootNamespace>Genie.Plugins.TimeTracker</RootNamespace>
     <AssemblyName>Plugin_TimeTrackerV5</AssemblyName>
-    <Version>1.0.0</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

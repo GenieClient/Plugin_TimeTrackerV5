@@ -28,7 +28,7 @@ public sealed class TimeTrackerPlugin : IGeniePlugin
 {
     public string Id             => "genie.timetracker";
     public string Name           => "Time Tracker";
-    public string Version        => "1.0";
+    public string Version        => "2.0";
     public string Author         => "Original Genie 4 TimeTracker (ported to Genie 5)";
     public string Description     => "Shows Elanthian time and the state of the sky (moons, sun, weather) in a dock panel.";
     public string MinHostVersion => "5.0.0";
